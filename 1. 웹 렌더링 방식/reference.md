@@ -1,0 +1,4 @@
+- https://web.dev/articles/howbrowserswork?hl=ko
+- https://www.youtube.com/watch?v=SmE4OwHztCc&list=PLom9wCiJ95GKkaIUGisMypdNl5AYcFBUF&index=2&t=926s
+- https://learn.udacity.com/ud884?version=1.0.1&lessonKey=d48ce852-b1eb-4f12-9291-23737028bbf0&conceptKey=1ed73046-759a-474b-bb32-7890584f3342
+- https://ui.toast.com/fe-guide/ko_PERFORMANCE
