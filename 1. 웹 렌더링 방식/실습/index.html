@@ -1,13 +1,71 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <main>Hi</main>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dummy Todos – Tailwind + JS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-screen bg-slate-100 text-slate-800">
+    <div class="mx-auto max-w-md p-6">
+      <div class="rounded-2xl bg-white shadow-lg ring-1 ring-slate-200">
+        <!-- Header -->
+        <div class="flex items-center justify-between border-b px-5 py-4">
+          <h1 class="text-xl font-semibold tracking-tight">Todo</h1>
+          <span id="count" class="text-sm text-slate-500">0 items</span>
+        </div>
 
-    <script></script>
-</body>
+        <!-- Add form -->
+        <form id="todo-form" class="flex gap-2 px-5 py-4">
+          <input
+            id="todo-input"
+            type="text"
+            placeholder="Add a task…"
+            class="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm outline-none transition focus:border-slate-500 focus:ring-2 focus:ring-slate-200"
+            autocomplete="off"
+          />
+          <button
+            class="rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-slate-800 active:translate-y-px"
+            type="submit"
+          >
+            Add
+          </button>
+        </form>
+
+        <!-- List -->
+        <ul id="todo-list" class="flex flex-col gap-1 px-2 pb-3"></ul>
+
+        <!-- Footer -->
+        <div class="flex items-center justify-between border-t px-5 py-3 text-sm text-slate-500">
+          <button id="clear-completed" class="rounded px-2 py-1 hover:bg-slate-100">
+            Clear completed
+          </button>
+          <button id="reset-dummy" class="rounded px-2 py-1 hover:bg-slate-100">
+            Reset to dummy data
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <template id="todo-item-template">
+      <li class="group flex items-center justify-between rounded-lg px-3 py-2 hover:bg-slate-50">
+        <label class="flex w-full cursor-pointer items-center gap-3">
+          <input type="checkbox" class="size-4 rounded border-slate-300 text-slate-900 focus:ring-slate-400" />
+          <span class="flex-1 text-sm"></span>
+        </label>
+        <button
+          class="invisible ml-2 rounded p-1 text-slate-400 transition hover:bg-slate-100 hover:text-slate-700 group-hover:visible"
+          title="Delete"
+        >
+          <!-- x icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </li>
+    </template>
+
+    <script src="./app.js"></script>
+  </body>
 </html>
